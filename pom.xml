@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.fujion.webjars</groupId>
+		<artifactId>fujion-webjars</artifactId>
+		<version>2.1.0</version>
+	</parent>
+
+	<name>JQuery Sparkline Library</name>
+	<artifactId>fujion-jquery-sparkline</artifactId>
+	<version>2.4.0-SNAPSHOT</version>
+	<description>JQuery sparkline graphing library.</description>
+	
+	<properties>
+		<src.url>https://github.com/imsky/jquery.sparkline/archive/v${src.version}.zip</src.url>
+		<src.top>jquery.sparkline-${src.version}</src.top>
+		<systemjs>
+			{
+				"paths": {
+					"jquery-sparkline": "jquery.sparkline.js"
+				}
+			}			
+		</systemjs>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>precompile</id>
+						<configuration>
+							<target>
+								<get src="${src.url}" dest="${src.zipdir}/src.zip"/>
+								<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
+								<move todir="${webjar.target}">
+									<fileset dir="${src.rootdir}" includes="jquery.sparkline*.js,README.md"/>
+								</move>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
