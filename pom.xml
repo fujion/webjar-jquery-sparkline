@@ -8,7 +8,7 @@
 	</parent>
 
 	<name>JQuery Sparkline Library</name>
-	<artifactId>fujion-jquery-sparkline</artifactId>
+	<artifactId>webjar-jquery-sparkline</artifactId>
 	<version>2.4.0-SNAPSHOT</version>
 	<description>JQuery sparkline graphing library.</description>
 	
