@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "jquery-sparkline": "jquery.sparkline.js"
+  }
+}

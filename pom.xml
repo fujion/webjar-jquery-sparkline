@@ -12,16 +12,6 @@
 	<version>2.4.0-1-SNAPSHOT</version>
 	<description>JQuery sparkline graphing library.</description>
 	
-	<properties>
-		<systemjs>
-			{
-				"paths": {
-					"jquery-sparkline": "jquery.sparkline.js"
-				}
-			}			
-		</systemjs>
-	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -30,9 +20,6 @@
 				<executions>
 					<execution>
 						<id>npm-install</id>
-						<configuration>
-							<skip>false</skip>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
