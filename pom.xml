@@ -43,7 +43,10 @@
 						<configuration>
 							<target>
 								<copy todir="${webjar.target}">
-									<fileset dir="${src.rootdir}/node_modules/jquery-sparkline" includes="jquery.sparkline*.js,README.md" />
+									<fileset dir="${src.rootdir}/node_modules/jquery-sparkline" includes="README.md" />
+								</copy>
+								<copy todir="${webjar.target}/dist">
+									<fileset dir="${src.rootdir}/node_modules/jquery-sparkline" includes="jquery.sparkline*.js" />
 								</copy>
 							</target>
 						</configuration>
