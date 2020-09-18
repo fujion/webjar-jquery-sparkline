@@ -1,5 +1,5 @@
 {
-  "paths": {
+  "imports": {
     "jquery-sparkline": "dist/jquery.sparkline.js"
   }
 }

@@ -9,7 +9,7 @@
 
 	<name>JQuery Sparkline Library</name>
 	<artifactId>webjar-jquery-sparkline</artifactId>
-	<version>2.4.0-1</version>
+	<version>2.4.0-2</version>
 	<description>JQuery sparkline graphing library.</description>
 	
 	<build>
