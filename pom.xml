@@ -11,9 +11,30 @@
 	<artifactId>webjar-jquery-sparkline</artifactId>
 	<version>2.4.0-11-SNAPSHOT</version>
 	<description>JQuery sparkline graphing library.</description>
-	
+
+	<properties>
+		<npm-install.skip>false</npm-install.skip>
+	</properties>
+
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.fujion.webjars</groupId>
+				<artifactId>webjar-validator-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>validate-webjar</id>
+						<configuration>
+							<rules>
+								<rule>file_exists import-map.json</rule>
+								<rule>file_exists README.md</rule>
+								<rule>file_contains LICENSE.txt "New BSD License"</rule>
+								<rule>file_exists dist/jquery.sparkline.js</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
