@@ -30,6 +30,7 @@
 								<rule>file_exists README.md</rule>
 								<rule>file_contains LICENSE.txt "New BSD License"</rule>
 								<rule>file_exists dist/jquery.sparkline.js</rule>
+								<rule>file_exists dist/jquery.sparkline.min.js</rule>
 							</rules>
 						</configuration>
 					</execution>
@@ -42,23 +43,11 @@
 						<id>precompile</id>
 						<configuration>
 							<target>
-								<copy tofile="${src.rootdir}/package.json" file="${basedir}/package-template.json">
+								<copy todir="${src.rootdir}">
+									<fileset dir="${basedir}/staging" />
 									<filterchain>
 										<expandproperties />
 									</filterchain>
-								</copy>
-							</target>
-						</configuration>
-					</execution>
-					<execution>
-						<id>postcompile</id>
-						<configuration>
-							<target>
-								<copy todir="${webjar.target}">
-									<fileset dir="${src.rootdir}/node_modules/jquery-sparkline" includes="README.md" />
-								</copy>
-								<copy todir="${webjar.target}/dist">
-									<fileset dir="${src.rootdir}/node_modules/jquery-sparkline" includes="jquery.sparkline*.js" />
 								</copy>
 							</target>
 						</configuration>
